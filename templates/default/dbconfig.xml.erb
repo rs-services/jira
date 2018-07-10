@@ -18,7 +18,7 @@
   <jdbc-datasource>
     <% case @database["type"] -%>
     <% when "mysql" -%>
-    <url>jdbc:mysql://<%= @database["host"] %>:<%= @database["port"] %>/<%= @database["name"] %>?useUnicode=true&amp;characterEncoding=UTF8&amp;sessionVariables=storage_engine=InnoDB</url>
+    <url>jdbc:mysql://<%= @database["host"] %>:<%= @database["port"] %>/<%= @database["name"] %>?useUnicode=true&amp;characterEncoding=UTF8</url>
     <driver-class>com.mysql.jdbc.Driver</driver-class>
     <validation-query>select 1</validation-query>
     <validation-query-timeout>3</validation-query-timeout>
