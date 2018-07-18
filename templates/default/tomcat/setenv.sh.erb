@@ -45,6 +45,9 @@ JAVA_OPTS="<%= node['jira']['jvm']['java_opts'] %> ${JAVA_OPTS}"
 # with other parts of the application logs.
 #-----------------------------------------------------------------------------------
 JVM_EXTRA_ARGS="-XX:+PrintGCDateStamps"
+<% if node['jira']['node_id'] %>
+JVM_EXTRA_ARGS="-Datlassian.cluster.scale=true -DjvmRoute=<%= node['jira']['node_id'] %>"
+<% end %>
 
 PRGDIR=`dirname "$0"`
 cat "${PRGDIR}"/jirabanner.txt
